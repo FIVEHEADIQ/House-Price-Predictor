@@ -1,0 +1,5 @@
+python >= 3.70
+pandas>=1.0.0
+scikit-learn>=0.24.0
+tk>=8.6.0
+
