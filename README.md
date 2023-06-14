@@ -16,3 +16,6 @@ To use this module, you'll need Python 3.10.11 or higher installed. You can inst
 
 ## Important Notes
 Please note that the model has an error% of around 29%, also note that the prices used for the training data are prices taken from March of 2021, with the current real estate market trends for the GTA (Greater Toronto Area), you can assume the price has gone down by around 11%. NOTE: The data for this model is only for GTA homes, entering any value for addresses or details not in the database will result in an error shown. The data set can be seen in the main.py file. 
+
+## Upcoming Updates
+Planned update for July 18th 4953: Can predict price of any valid inputted address and details, as well with inflation predictions and depreciation predictions.
