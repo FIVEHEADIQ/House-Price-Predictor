@@ -4,6 +4,8 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.preprocessing import LabelEncoder
 import tkinter as tk
 from tkinter import messagebox
+from sklearn.metrics import mean_absolute_error
+import matplotlib.pyplot as plt
 
 # Load the dataset
 csv_files = ['https://raw.githubusercontent.com/kennymkchan/greater-toronto-area-housing-data/master/data/oakville/csv/oakville_housing_data_03222021.json.csv',
@@ -44,11 +46,27 @@ details_encoder = LabelEncoder()
 combined_df['address_score'] = address_encoder.fit_transform(combined_df['address'])
 combined_df['details_score'] = details_encoder.fit_transform(combined_df['details'])
 
+# Create a scatter plot
+plt.figure(figsize=(8, 6))
+plt.scatter(combined_df['address_score'], combined_df['price'], label='Address Score')
+plt.scatter(combined_df['details_score'], combined_df['price'], label='Details Score')
+plt.xlabel('Score')
+plt.ylabel('Price')
+plt.title('Impact of Address and Details Scores on Price')
+plt.legend()
+plt.show()
+
 X = combined_df[['address_score', 'details_score']]
 Y = combined_df['price']
 
 model = GradientBoostingRegressor()
 model.fit(X, Y)
+
+# Calculate mean absolute error
+predicted_prices = model.predict(X)
+mae = mean_absolute_error(Y, predicted_prices)
+mae_percent = (mae / np.mean(Y)) * 100
+print("Mean Absolute Error (%):", mae_percent)
 
 # Create the GUI
 root = tk.Tk()
