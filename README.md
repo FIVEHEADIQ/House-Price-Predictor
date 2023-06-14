@@ -1,7 +1,5 @@
 # House Price Prediction
 
-![House Price Prediction](images/house-price-prediction.png)
-
 This is a Python module that uses machine learning to predict house prices based on address and details. The module utilizes a gradient boosting regression algorithm to train a model on a dataset of house prices. It takes into account the address and specific details of each house to make accurate price predictions. The model is trained on historical housing data from various sources to learn patterns and relationships between the features and the target variable (price).
 
 
