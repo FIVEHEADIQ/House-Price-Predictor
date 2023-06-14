@@ -4,9 +4,14 @@ This is a Python module that uses machine learning to predict house prices based
 
 
 
-## Installation
+## Installation and Usage
 
 To use this module, you'll need Python 3.7 or higher installed. You can install the required dependencies by running the following command: pip install -r requirements.txt
+
+1. Run the main file.
+2. Input your desired address and details and click the "Predict Price" button in the GUI.
+3. See your predicted price in a message box. 
+4. Repeat if needed with different addresses and details.
 
 
 ## Important Notes
